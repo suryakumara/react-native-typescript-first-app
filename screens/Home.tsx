@@ -2,6 +2,7 @@
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { FlatList, TouchableOpacity, View } from 'react-native';
+import ListItem from '../components/ListItem';
 import { RootStackParamList } from '../routes/StackNavigator';
 import { theme } from '../theme/theme';
 
@@ -33,7 +34,13 @@ const Home = () => {
     <View style={theme.container}>
       <FlatList
         data={reviews}
-        renderItem={({ item }) => <TouchableOpacity />}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ReviewDetails', item)}
+          >
+            <ListItem item={item} />
+          </TouchableOpacity>
+        )}
       />
     </View>
   );
