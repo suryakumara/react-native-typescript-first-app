@@ -1,10 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { Text, View } from "react-native";
 
 const ReviewDetails = () => {
   return (
     <View>
-      <Text>ReviewDetails</Text>
+      <Text>ReviewDetailss</Text>
     </View>
   );
 };

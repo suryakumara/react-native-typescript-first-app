@@ -2,7 +2,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
 import { useState } from "react";
-import { StyleSheet } from "react-native";
 import StackNavigator from "./routes/StackNavigator";
 
 const getFonts = () => {
@@ -31,12 +30,3 @@ export default function App() {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
