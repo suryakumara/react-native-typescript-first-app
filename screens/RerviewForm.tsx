@@ -3,16 +3,29 @@ import React from 'react';
 import { theme } from '../theme/theme';
 import { Formik } from 'formik';
 import { ReviewData } from '../types';
+import * as yup from 'yup';
 
 interface ReviewFormProps {
   addReview: (review: ReviewData) => void;
 }
+
+const ReviewSchema = yup.object({
+  title: yup.string().required().min(4),
+  body: yup.string().required().min(8),
+  rating: yup
+    .number()
+    .required()
+    .test('is-num', 'Rating must be a number 1-5', (val) => {
+      return val !== undefined && val < 6 && val > 0;
+    }),
+});
 
 const RerviewForm: React.FC<ReviewFormProps> = ({ addReview }) => {
   return (
     <View style={theme.container}>
       <Formik
         initialValues={{ title: '', body: '', rating: 0, key: '' }}
+        validationSchema={ReviewSchema}
         onSubmit={(value, action) => {
           addReview({ ...value, rating: Number(value.rating) });
           action.resetForm();
