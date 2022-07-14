@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { ImageSourcePropType, StyleSheet } from 'react-native';
 
 export const theme = StyleSheet.create({
   container: {
@@ -9,10 +9,32 @@ export const theme = StyleSheet.create({
   titleText: {
     fontFamily: 'nunito-bold',
     fontSize: 18,
-    color: '#fff',
+    color: '#333',
   },
   paragraph: {
     marginVertical: 8,
     lineHeight: 20,
   },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    padding: 10,
+    fontSize: 18,
+    borderRadius: 6,
+    marginBottom: 10,
+  },
 });
+
+export const images: {
+  ratings: {
+    [index: string]: ImageSourcePropType;
+  };
+} = {
+  ratings: {
+    '1': require('../assets/rating-1.png'),
+    '2': require('../assets/rating-2.png'),
+    '3': require('../assets/rating-3.png'),
+    '4': require('../assets/rating-4.png'),
+    '5': require('../assets/rating-5.png'),
+  },
+};
