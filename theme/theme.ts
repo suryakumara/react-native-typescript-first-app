@@ -11,6 +11,13 @@ export const theme = StyleSheet.create({
     fontSize: 18,
     color: '#333',
   },
+  errorText: {
+    fontFamily: 'nunito-bold',
+    fontSize: 15,
+    color: 'red',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
   paragraph: {
     marginVertical: 8,
     lineHeight: 20,
@@ -21,7 +28,6 @@ export const theme = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     borderRadius: 6,
-    marginBottom: 10,
   },
 });
 
